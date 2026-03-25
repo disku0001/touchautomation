@@ -31,9 +31,9 @@ Architecture: iphoneos-arm64
 Version: 1.0.5
 Installed-Size: 9364
 Filename: pool/rootless/com.shadowtech.ios_1.0.5_iphoneos-arm64.deb
-Size: 2870682
-MD5sum: 0b4eb7e47db186a19940ab0e0aa59c1c
-SHA256: 40d30d6858a6617bf85a5dbc4fae4b590f134b5cb97c8b86b9a85e48d41e6d94
+Size: 2158648
+MD5sum: ee1dc1690bfd4e2a058ede5eac57fe32
+SHA256: b04d78e6c074982b41fa5ffc95f77e06dd94e02ac9bc88d89a426f38e113ac84
 
 Package: me.autotouch.autotouch.ios8.inputtext
 Priority: optional
