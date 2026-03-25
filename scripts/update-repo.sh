@@ -15,21 +15,56 @@ PACKAGE_COUNT=0
 for TYPE in rootless roothide; do
     POOL_DIR="$REPO_ROOT/pool/$TYPE"
 
+    # Process .deb files (extract control from deb)
     for DEB in "$POOL_DIR"/*.deb; do
         [ -f "$DEB" ] || continue
 
         echo "  Processing: $(basename "$DEB") ($TYPE)"
 
-        # Extract control info from .deb
         CONTROL=$(dpkg-deb -f "$DEB")
-
-        # Get file metadata (handle both GNU and BSD stat)
         SIZE=$(stat -c%s "$DEB" 2>/dev/null || stat -f%z "$DEB" 2>/dev/null)
         MD5=$(md5sum "$DEB" | cut -d' ' -f1)
         SHA256=$(sha256sum "$DEB" | cut -d' ' -f1)
         FILENAME="pool/$TYPE/$(basename "$DEB")"
 
-        # Write entry to Packages
+        echo "$CONTROL" >> "$PACKAGES_FILE"
+        echo "Filename: $FILENAME" >> "$PACKAGES_FILE"
+        echo "Size: $SIZE" >> "$PACKAGES_FILE"
+        echo "MD5sum: $MD5" >> "$PACKAGES_FILE"
+        echo "SHA256: $SHA256" >> "$PACKAGES_FILE"
+        echo "" >> "$PACKAGES_FILE"
+
+        PACKAGE_COUNT=$((PACKAGE_COUNT + 1))
+    done
+
+    # Process non-.deb files (.tipa, .ipa, etc.) using sidecar control files
+    # For each file like "package.tipa", place a "package.tipa.control" next to it
+    for PKG in "$POOL_DIR"/*.tipa "$POOL_DIR"/*.ipa; do
+        [ -f "$PKG" ] || continue
+
+        CONTROL_FILE="${PKG}.control"
+        if [ ! -f "$CONTROL_FILE" ]; then
+            echo "  WARNING: No control file for $(basename "$PKG"), generating default..."
+            BASENAME=$(basename "$PKG" | sed 's/[^a-zA-Z0-9]/-/g' | tr '[:upper:]' '[:lower:]')
+            cat > "$CONTROL_FILE" << CTRL_EOF
+Package: com.touchautomation.${BASENAME}
+Name: $(basename "$PKG")
+Version: 1.0
+Architecture: iphoneos-arm64
+Maintainer: TouchAutomation
+Section: Tweaks
+Description: $(basename "$PKG")
+CTRL_EOF
+        fi
+
+        echo "  Processing: $(basename "$PKG") ($TYPE)"
+
+        CONTROL=$(cat "$CONTROL_FILE")
+        SIZE=$(stat -c%s "$PKG" 2>/dev/null || stat -f%z "$PKG" 2>/dev/null)
+        MD5=$(md5sum "$PKG" | cut -d' ' -f1)
+        SHA256=$(sha256sum "$PKG" | cut -d' ' -f1)
+        FILENAME="pool/$TYPE/$(basename "$PKG")"
+
         echo "$CONTROL" >> "$PACKAGES_FILE"
         echo "Filename: $FILENAME" >> "$PACKAGES_FILE"
         echo "Size: $SIZE" >> "$PACKAGES_FILE"
