@@ -6,6 +6,28 @@ PACKAGES_FILE="$REPO_ROOT/Packages"
 
 echo "==> Updating TouchAutomation repository..."
 
+# Step 1: Repackage .deb files to remove Conflicts field
+echo "==> Patching .deb files (removing Conflicts)..."
+TMPDIR=$(mktemp -d)
+for TYPE in rootless roothide; do
+    POOL_DIR="$REPO_ROOT/pool/$TYPE"
+    for DEB in "$POOL_DIR"/*.deb; do
+        [ -f "$DEB" ] || continue
+
+        # Check if this .deb has Conflicts field
+        if dpkg-deb -f "$DEB" | grep -q "^Conflicts:"; then
+            echo "  Patching: $(basename "$DEB") - removing Conflicts"
+            WORK="$TMPDIR/$(basename "$DEB")"
+            mkdir -p "$WORK"
+            dpkg-deb -R "$DEB" "$WORK"
+            sed -i '/^Conflicts:/d' "$WORK/DEBIAN/control"
+            dpkg-deb -b "$WORK" "$DEB"
+            rm -rf "$WORK"
+        fi
+    done
+done
+rm -rf "$TMPDIR"
+
 # Clear old Packages file
 > "$PACKAGES_FILE"
 
