@@ -17,15 +17,23 @@ Size: 23849172
 MD5sum: e8b48476ae178b32b88334fecb43cf37
 SHA256: bc852ada00157adc4a724b38b024a7df088ceb46baf594e2579aeb256b2a6fd0
 
-Package: com.touchautomation.roothide-dopamine2-v16-tipa
-Name: roothide-Dopamine2-v16.tipa
-Version: 1.0
-Architecture: iphoneos-arm64
-Maintainer: TouchAutomation
-Section: Tweaks
-Description: roothide-Dopamine2-v16.tipa
-Filename: pool/roothide/roothide-Dopamine2-v16.tipa
-Size: 53703936
-MD5sum: 74fa7b2c12911f9629265c881a552aad
-SHA256: ffa19bf19d52e7006cf95c489eba015bfcb99b59b4c366cb4488ea600df71a2a
+Package: me.autotouch.autotouch.ios8.inputtext
+Priority: optional
+Section: Utilities
+Installed-Size: 83248
+Maintainer: Kent Krantz <kentkrantz@gmail.com>
+Architecture: iphoneos-arm64e
+Version: 8.2.14
+Depends: firmware (>= 12.2) | org.swift.libswift (>= 5.0), ellekit
+Conflicts: com.repo.xarold.com.autotouch8, repo.biteyourapple.net.autotouch8, repo.biteyourapple.net.autotouch, com.hackyouriphone.autotouch8
+Description: Record and playback touch operations, play macro scripts automatically.
+Name: AutoTouch InputText
+Author: Kent Krantz <kentkrantz@gmail.com>
+Homepage: https://autotouch.net
+Icon: file:///Applications/AutoTouch.app/AppIcon60x60@2x.png
+Pre-Depends: rootless-compat(>= 0.9)
+Filename: pool/roothide/rootless_att_82.4_4.9.24 roothide.deb
+Size: 69159650
+MD5sum: 252ea7ce17e2fb570743deee11c27cc3
+SHA256: c55bcaca669b489722c4f5d829a5ac5fc1b4881a0fe64f8dc0b4fdda5f448142
 
