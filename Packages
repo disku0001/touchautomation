@@ -17,6 +17,24 @@ Size: 23849172
 MD5sum: e8b48476ae178b32b88334fecb43cf37
 SHA256: bc852ada00157adc4a724b38b024a7df088ceb46baf594e2579aeb256b2a6fd0
 
+Package: com.shadowtech.ios
+Name: shadowios (rootless)
+Depiction: https://repo.shadowtech.vip/depictions/web/?p=com.shadowtech.ios
+SileoDepiction: https://repo.shadowtech.vip/depictions/native/com.shadowtech.ios/depiction.json
+Depends: preferenceloader, zip (>= 2.2), unzip (>= 6.0), curl, ldid (>= 2.0), sqlite3 (>= 3.24) | firmware (<< 7.0)
+Description: ShadowTech ios autolead
+Maintainer: ShadowTech
+Author: ShadowTech
+Section: System
+Tag: role::hacker
+Architecture: iphoneos-arm64
+Version: 1.0.5
+Installed-Size: 9364
+Filename: pool/rootless/com.shadowtech.ios_1.0.5_iphoneos-arm64.deb
+Size: 2156336
+MD5sum: 90ab095d4344ad53a720dde447c3d2d2
+SHA256: 6bf81f9ebcae536ab5caf69fbafc5907a97024ea831f3fdfa9557a8c0df2fc66
+
 Package: me.autotouch.autotouch.ios8.inputtext
 Priority: optional
 Section: Utilities
