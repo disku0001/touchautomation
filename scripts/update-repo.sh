@@ -22,6 +22,11 @@ for TYPE in rootless roothide; do
         echo "  Processing: $(basename "$DEB") ($TYPE)"
 
         CONTROL=$(dpkg-deb -f "$DEB")
+
+        # Append jailbreak type suffix to Name field
+        SUFFIX=$(echo "$TYPE" | sed 's/rootless/(rootless)/;s/roothide/(roothide)/')
+        CONTROL=$(echo "$CONTROL" | sed "s/^Name: \(.*\)/Name: \1 $SUFFIX/")
+
         SIZE=$(stat -c%s "$DEB" 2>/dev/null || stat -f%z "$DEB" 2>/dev/null)
         MD5=$(md5sum "$DEB" | cut -d' ' -f1)
         SHA256=$(sha256sum "$DEB" | cut -d' ' -f1)
