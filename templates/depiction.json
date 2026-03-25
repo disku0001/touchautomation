@@ -1,0 +1,48 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "{{BANNER_URL}}",
+  "tintColor": "{{TINT_COLOR}}",
+  "tabs": [
+    {
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "{{DESCRIPTION}}"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "{{DEVELOPER}}"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "{{VERSION}}"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "{{COMPATIBILITY}}"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Section",
+          "text": "{{SECTION}}"
+        }
+      ]
+    },
+    {
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "{{CHANGELOG}}"
+        }
+      ]
+    }
+  ]
+}

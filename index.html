@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TouchAutomation - Sileo Repository</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 480px;
+        }
+        .icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 27px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #888;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 0 4px 1.5rem;
+        }
+        .rootless { background: #1a3a2a; color: #4ade80; }
+        .roothide { background: #3a1a2a; color: #f472b6; }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, opacity 0.2s;
+            margin: 0.5rem;
+        }
+        .btn:hover { transform: scale(1.05); opacity: 0.9; }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+        .btn-secondary {
+            background: #1a1a2e;
+            color: #667eea;
+            border: 1px solid #333;
+        }
+        .url-box {
+            margin-top: 2rem;
+            padding: 12px 16px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #aaa;
+            word-break: break-all;
+        }
+        .info {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">TA</div>
+        <h1>TouchAutomation</h1>
+        <p class="subtitle">Sileo Repository for iOS Jailbreak</p>
+        <span class="badge rootless">Rootless</span>
+        <span class="badge roothide">RootHide</span>
+        <br>
+        <a class="btn btn-primary" href="sileo://source/add/https://disku0001.github.io/touchautomation/">
+            Add to Sileo
+        </a>
+        <a class="btn btn-secondary" href="https://disku0001.github.io/touchautomation/">
+            Copy Repo URL
+        </a>
+        <div class="url-box">
+            https://disku0001.github.io/touchautomation/
+        </div>
+        <p class="info">
+            Supports rootless (Dopamine, palera1n) and roothide jailbreaks.<br>
+            Packages are filtered automatically based on your jailbreak type.
+        </p>
+    </div>
+</body>
+</html>

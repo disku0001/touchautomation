@@ -1,0 +1,9 @@
+Package: com.touchautomation.packageid
+Name: Package Name
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Depends: ellekit
+Maintainer: TouchAutomation <your@email.com>
+Section: Tweaks
+Description: Short description of the package
+SileoDepiction: https://disku0001.github.io/touchautomation/depictions/native/com.touchautomation.packageid.json
