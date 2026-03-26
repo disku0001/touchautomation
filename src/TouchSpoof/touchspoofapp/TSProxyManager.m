@@ -1,5 +1,5 @@
 #import "TSProxyManager.h"
-#import <SystemConfiguration/SystemConfiguration.h>
+// Proxy management via config files (no SystemConfiguration needed on jailbreak)
 
 static NSString *const kProxyPlistPath = @"/var/jb/Library/PreferenceLoader/Preferences/proxySettings.plist";
 
@@ -135,41 +135,30 @@ static NSString *const kProxyPlistPath = @"/var/jb/Library/PreferenceLoader/Pref
     NSLog(@"[TouchSpoof] Proxy disabled");
 }
 
-#pragma mark - System Proxy Helpers
+#pragma mark - System Proxy Helpers (via config file for SOCKS5 relay)
 
 + (void)applySystemProxy:(NSDictionary *)proxy {
-    SCDynamicStoreRef store = SCDynamicStoreCreate(NULL, CFSTR("TouchSpoof"), NULL, NULL);
-    if (!store) return;
+    NSString *host = proxy[@"host"] ?: @"127.0.0.1";
+    NSString *port = proxy[@"port"] ?: @"1080";
+    NSString *user = proxy[@"username"] ?: @"";
+    NSString *pass = proxy[@"password"] ?: @"";
 
-    NSString *host = proxy[@"host"] ?: @"";
-    int port = [proxy[@"port"] intValue];
-
-    NSDictionary *proxyDict = @{
-        (__bridge NSString *)kSCPropNetProxiesHTTPEnable:  @1,
-        (__bridge NSString *)kSCPropNetProxiesHTTPProxy:   host,
-        (__bridge NSString *)kSCPropNetProxiesHTTPPort:    @(port),
-        (__bridge NSString *)kSCPropNetProxiesHTTPSEnable: @1,
-        (__bridge NSString *)kSCPropNetProxiesHTTPSProxy:  host,
-        (__bridge NSString *)kSCPropNetProxiesHTTPSPort:   @(port),
-    };
-
-    SCDynamicStoreSetValue(store, CFSTR("State:/Network/Global/Proxies"), (__bridge CFDictionaryRef)proxyDict);
-    CFRelease(store);
-    NSLog(@"[TouchSpoof] System proxy set to %@:%d", host, port);
+    // Write proxy config for relay daemon
+    NSString *configPath = @"/var/jb/Library/PreferenceLoader/Preferences/proxy.conf";
+    NSString *config;
+    if (user.length > 0) {
+        config = [NSString stringWithFormat:@"%@:%@:%@:%@", host, port, user, pass];
+    } else {
+        config = [NSString stringWithFormat:@"%@:%@", host, port];
+    }
+    [config writeToFile:configPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"[TouchSpoof] Proxy config written: %@:%@", host, port);
 }
 
 + (void)clearSystemProxy {
-    SCDynamicStoreRef store = SCDynamicStoreCreate(NULL, CFSTR("TouchSpoof"), NULL, NULL);
-    if (!store) return;
-
-    NSDictionary *proxyDict = @{
-        (__bridge NSString *)kSCPropNetProxiesHTTPEnable:  @0,
-        (__bridge NSString *)kSCPropNetProxiesHTTPSEnable: @0,
-    };
-
-    SCDynamicStoreSetValue(store, CFSTR("State:/Network/Global/Proxies"), (__bridge CFDictionaryRef)proxyDict);
-    CFRelease(store);
-    NSLog(@"[TouchSpoof] System proxy cleared");
+    NSString *configPath = @"/var/jb/Library/PreferenceLoader/Preferences/proxy.conf";
+    [@"" writeToFile:configPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"[TouchSpoof] Proxy config cleared");
 }
 
 @end
