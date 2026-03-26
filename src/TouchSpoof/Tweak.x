@@ -22,8 +22,6 @@ extern CFPropertyListRef MGCopyAnswer(CFStringRef property);
 // Global config - loaded from plist
 // ============================================================
 
-static BOOL gEnabled = YES;
-
 // Feature toggles
 static BOOL gFakeDevice = YES;
 static BOOL gFakeHardware = YES;

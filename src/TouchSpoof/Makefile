@@ -9,10 +9,9 @@ include $(THEOS)/makefiles/common.mk
 TWEAK_NAME = TouchSpoof
 
 TouchSpoof_FILES = Tweak.x
-TouchSpoof_CFLAGS = -fobjc-arc
+TouchSpoof_CFLAGS = -fobjc-arc -Wno-unused-variable -Wno-unused-function
 TouchSpoof_FRAMEWORKS = CoreLocation UIKit CoreTelephony CoreMotion AdSupport WebKit
-TouchSpoof_PRIVATE_FRAMEWORKS = MobileGestalt
-TouchSpoof_LIBRARIES = MobileGestalt
+TouchSpoof_LDFLAGS = -lMobileGestalt -F/usr/lib
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
