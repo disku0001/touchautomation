@@ -45,11 +45,11 @@ Section: Tweaks
 Tag: role::hacker
 Architecture: iphoneos-arm64
 Version: 1.0.0
-Installed-Size: 176
+Installed-Size: 512
 Filename: pool/rootless/com.touchautomation.touchspoof_1.0.0_iphoneos-arm64.deb
-Size: 9796
-MD5sum: a03d44cd4f0166c679f8226b744e8359
-SHA256: 67ac034b32921085f0134d5414e58008c5b13246ba1fd9298b235654e41c4e27
+Size: 57066
+MD5sum: 82b32d631f061d64797eb266eb37585a
+SHA256: 4988832e5bb903317c2f37e6657f9a60e9e708c404ef40a0858261757e3a51de
 
 Package: me.autotouch.autotouch.ios8.inputtext
 Priority: optional
