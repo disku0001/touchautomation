@@ -7,11 +7,10 @@ Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: TouchAutomation - APT Repository for rootless and roothide jailbreaks
 MD5Sum:
- 3e09a6dd703d82f3204c57d4981770f3 2979 Packages
- a7c4c56ce87579326d6a0b11a4552f96 1364 Packages.bz2
- cc94598143f9921e8fee7e2abb31f4c4 1272 Packages.xz
+ fa2a5de9ef9c9cb52b0e4c02ba7d01da 2979 Packages
+ 02f835d49e0ccdeafcef99d84f7de38d 1355 Packages.bz2
+ a688a47e0f6d7ac47e873467d52baac7 1272 Packages.xz
 SHA256:
- 742405a0cfd32b34c326ff44eddb929d54fbe7945f0d0693e4e435a3227d8d58 2979 Packages
- ff5779d3969e7a7e98db288707cb566cab66a3572bc2c31c8cb500a007873623 1364 Packages.bz2
- e6cc5bf81ee470df44d1f0ec85311b8f1ae4f47b2dd77ec8ecae792525048455 1272 Packages.xz
-
+ 1d6bc4905c61d3754ba1bcc8c521fbd5e455b7a4094b5b2282e87b646813fd87 2979 Packages
+ 3d0d8bd1dfc0cc807a320a06998b5aa14020f7f26ea1ee32f784cda84efaf4d5 1355 Packages.bz2
+ 58eb5e9c2953967908fca17d32f5602db199eccc84f3c02ff2e75b7e88a25a8d 1272 Packages.xz

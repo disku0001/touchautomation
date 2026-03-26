@@ -47,9 +47,9 @@ Architecture: iphoneos-arm64
 Version: 1.0.0
 Installed-Size: 176
 Filename: pool/rootless/com.touchautomation.touchspoof_1.0.0_iphoneos-arm64.deb
-Size: 9784
-MD5sum: 682fdbb3f4ec2495c2bc5d35acad4a14
-SHA256: e985ecb2ccffbce9c65a5b27ecbca0b4d0c2a864bf184f5515ba0dbadfa418b5
+Size: 9796
+MD5sum: a03d44cd4f0166c679f8226b744e8359
+SHA256: 67ac034b32921085f0134d5414e58008c5b13246ba1fd9298b235654e41c4e27
 
 Package: me.autotouch.autotouch.ios8.inputtext
 Priority: optional
