@@ -35,6 +35,22 @@ Size: 2158674
 MD5sum: 87bd745497f605869aa6cb405bc6173d
 SHA256: d5998387656b6987ef893ee3d48ddda755dd165b2fc0f2361b3ba132d3206747
 
+Package: com.touchautomation.touchspoof
+Name: TouchSpoof (rootless)
+Depends: mobilesubstrate (>= 0.9.5000) | libhooker, preferenceloader, firmware (>= 15.0)
+Description: Device spoofing tweak - fake device info, location, ads, network, browser, datetime, sensors, screen, locale, and more. No login required.
+Maintainer: TouchAutomation
+Author: TouchAutomation
+Section: Tweaks
+Tag: role::hacker
+Architecture: iphoneos-arm64
+Version: 1.0.0
+Installed-Size: 176
+Filename: pool/rootless/com.touchautomation.touchspoof_1.0.0_iphoneos-arm64.deb
+Size: 9784
+MD5sum: 682fdbb3f4ec2495c2bc5d35acad4a14
+SHA256: e985ecb2ccffbce9c65a5b27ecbca0b4d0c2a864bf184f5515ba0dbadfa418b5
+
 Package: me.autotouch.autotouch.ios8.inputtext
 Priority: optional
 Section: Utilities
