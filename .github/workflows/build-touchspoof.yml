@@ -1,0 +1,52 @@
+name: Build TouchSpoof
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/TouchSpoof/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Theos
+        uses: actions/checkout@v4
+        with:
+          repository: theos/theos
+          path: theos
+          submodules: recursive
+
+      - name: Setup iOS SDK
+        run: |
+          curl -sL https://github.com/theos/sdks/releases/latest/download/iPhoneOS16.5.sdk.tar.xz -o sdk.tar.xz
+          mkdir -p $GITHUB_WORKSPACE/theos/sdks
+          tar -xf sdk.tar.xz -C $GITHUB_WORKSPACE/theos/sdks
+
+      - name: Install tools
+        run: brew install ldid xz dpkg
+
+      - name: Build package
+        env:
+          THEOS: ${{ github.workspace }}/theos
+        working-directory: src/TouchSpoof
+        run: make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+
+      - name: Copy .deb to pool
+        run: |
+          cp src/TouchSpoof/packages/*.deb pool/rootless/
+          chmod +x scripts/update-repo.sh
+          # Note: update-repo.sh needs dpkg-deb which is available on macOS via dpkg
+          bash scripts/update-repo.sh
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pool/ Packages Packages.bz2 Packages.xz Release
+          git diff --cached --quiet || git commit -m "Auto-build TouchSpoof and update repo"
+          git push

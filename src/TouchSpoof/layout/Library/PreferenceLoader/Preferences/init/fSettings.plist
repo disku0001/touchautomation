@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fakeDevice</key><true/>
+	<key>fakeHardware</key><true/>
+	<key>fakeAds</key><true/>
+	<key>fakeScreen</key><true/>
+	<key>fakeBrowser</key><true/>
+	<key>fakeDateTime</key><true/>
+	<key>fakeNetWork</key><true/>
+	<key>fakeWifiInfo</key><true/>
+	<key>fakeSensor</key><true/>
+	<key>fakeLocale</key><true/>
+	<key>fakeSysctl</key><true/>
+	<key>fakeSysOSVersion</key><true/>
+	<key>fakeLocation</key><true/>
+	<key>fakeRealScreen</key><false/>
+	<key>fakeWebRTC</key><false/>
+	<key>disWebRTC</key><false/>
+</dict>
+</plist>

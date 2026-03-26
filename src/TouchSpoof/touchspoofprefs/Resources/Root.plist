@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key><string>PSGroupCell</string>
+			<key>label</key><string>TouchSpoof v1.0</string>
+			<key>footerText</key><string>Device spoofing tweak. No login required.</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeDevice</string>
+			<key>label</key><string>Fake Device</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeHardware</string>
+			<key>label</key><string>Fake Hardware</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeLocation</string>
+			<key>label</key><string>Fake Location</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeAds</string>
+			<key>label</key><string>Fake Ads/IDFA</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeScreen</string>
+			<key>label</key><string>Fake Screen</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeBrowser</string>
+			<key>label</key><string>Fake Browser/UA</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeDateTime</string>
+			<key>label</key><string>Fake DateTime/TZ</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeNetWork</string>
+			<key>label</key><string>Fake Network/Carrier</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeLocale</string>
+			<key>label</key><string>Fake Locale</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeSensor</string>
+			<key>label</key><string>Fake Sensor/Battery</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeSysctl</string>
+			<key>label</key><string>Fake Sysctl</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.touchautomation.touchspoof</string>
+			<key>key</key><string>fakeWifiInfo</string>
+			<key>label</key><string>Fake WiFi Info</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>TouchSpoof</string>
+</dict>
+</plist>

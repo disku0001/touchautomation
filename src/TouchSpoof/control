@@ -1,0 +1,10 @@
+Package: com.touchautomation.touchspoof
+Name: TouchSpoof
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate (>= 0.9.5000) | libhooker, preferenceloader, firmware (>= 15.0)
+Description: Device spoofing tweak - fake device info, location, ads, network, browser, datetime, sensors, screen, locale, and more. No login required.
+Maintainer: TouchAutomation
+Author: TouchAutomation
+Section: Tweaks
+Tag: role::hacker

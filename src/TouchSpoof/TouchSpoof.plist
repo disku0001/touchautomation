@@ -1,0 +1,21 @@
+{ Filter = { Bundles = (
+    "com.apple.springboard",
+    "com.apple.UIKit",
+    "com.apple.Maps",
+    "com.apple.Preferences",
+    "com.apple.storeservices",
+    "com.apple.IOKit",
+    "com.apple.CoreFoundation",
+    "com.apple.Foundation",
+    "com.apple.WebKit",
+    "com.apple.corelocation",
+    "com.apple.mobilestoresettings",
+    "com.apple.AppStore",
+    "com.apple.mobilesafari",
+    "com.apple.FrontBoardServices",
+    "com.apple.timed",
+    "com.apple.locationd",
+    "com.apple.WebKit.WebContent",
+    "com.apple.WebKit.Networking",
+    "com.apple.corelocation.CoreLocationVanillaWhenInUseAuthPromptPlugin"
+); Mode = Any; }; }
