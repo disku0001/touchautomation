@@ -68,7 +68,7 @@ static NSString *gWifiMAC = nil;
 
 static void loadSettings() {
     NSDictionary *fPrefs = [NSDictionary dictionaryWithContentsOfFile:PREFS_PATH];
-    NSDictionary *gPrefs = [NSDictionary dictionaryWithContentsOfFile:GENERAL_PATH];
+    __unused NSDictionary *gPrefs = [NSDictionary dictionaryWithContentsOfFile:GENERAL_PATH];
 
     if (fPrefs) {
         gFakeDevice = [fPrefs[@"fakeDevice"] boolValue];
