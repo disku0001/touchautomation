@@ -14,3 +14,6 @@ TouchSpoof_FRAMEWORKS = CoreLocation UIKit CoreTelephony CoreMotion AdSupport We
 TouchSpoof_LDFLAGS = -lMobileGestalt -F/usr/lib
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+
+SUBPROJECTS += touchspoofapp
+include $(THEOS_MAKE_PATH)/aggregate.mk

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleExecutable</key><string>TouchSpoofApp</string>
+	<key>CFBundleIdentifier</key><string>com.touchautomation.TouchSpoofApp</string>
+	<key>CFBundleDisplayName</key><string>TouchSpoof</string>
+	<key>CFBundleName</key><string>TouchSpoofApp</string>
+	<key>CFBundleVersion</key><string>1.0.0</string>
+	<key>CFBundleShortVersionString</key><string>1.0.0</string>
+	<key>CFBundlePackageType</key><string>APPL</string>
+	<key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+	<key>LSRequiresIPhoneOS</key><true/>
+	<key>UIDeviceFamily</key><array><integer>1</integer><integer>2</integer></array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array><string>UIInterfaceOrientationPortrait</string></array>
+	<key>UIUserInterfaceStyle</key><string>Dark</string>
+	<key>UILaunchStoryboardName</key><string></string>
+	<key>NSAppTransportSecurity</key>
+	<dict><key>NSAllowsArbitraryLoads</key><true/></dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key><string>Editor</string>
+			<key>CFBundleURLName</key><string>com.touchautomation.touchspoofurl</string>
+			<key>CFBundleURLSchemes</key>
+			<array><string>touchspoof</string></array>
+		</dict>
+	</array>
+	<key>MinimumOSVersion</key><string>15.0</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array><string>arm64</string></array>
+</dict>
+</plist>
