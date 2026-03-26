@@ -5,7 +5,7 @@
 	<key>fakeDevice</key><true/>
 	<key>fakeHardware</key><true/>
 	<key>fakeAds</key><true/>
-	<key>fakeScreen</key><true/>
+	<key>fakeScreen</key><false/>
 	<key>fakeBrowser</key><true/>
 	<key>fakeDateTime</key><true/>
 	<key>fakeNetWork</key><true/>
