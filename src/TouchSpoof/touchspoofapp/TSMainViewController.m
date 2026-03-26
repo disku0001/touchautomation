@@ -3,7 +3,7 @@
 #import "TSProxyManager.h"
 #import "TSAppManager.h"
 
-@interface TSMainViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface TSMainViewController ()
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *deviceInfoLabel;
 @property (nonatomic, strong) UILabel *ipInfoLabel;
