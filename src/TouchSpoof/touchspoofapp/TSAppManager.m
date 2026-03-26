@@ -1,4 +1,13 @@
 #import "TSAppManager.h"
+#import <spawn.h>
+#import <sys/wait.h>
+
+static void runCommand(NSString *cmd) {
+    pid_t pid;
+    const char *args[] = {"/bin/sh", "-c", [cmd UTF8String], NULL};
+    posix_spawn(&pid, "/bin/sh", NULL, NULL, (char *const *)args, NULL);
+    waitpid(pid, NULL, 0);
+}
 
 static NSString *const kBackupRoot = @"/var/jb/Library/TouchSpoof/Backups";
 static NSString *const kSelectedKey = @"TouchSpoof_SelectedApps";
@@ -130,7 +139,7 @@ static NSString *const kSelectedKey = @"TouchSpoof_SelectedApps";
         // Use tar to create backup archive
         NSString *archivePath = [dest stringByAppendingPathComponent:@"backup.tar.gz"];
         NSString *cmd = [NSString stringWithFormat:@"tar -czf '%@' -C '%@' .", archivePath, container];
-        system([cmd UTF8String]);
+        runCommand(cmd);
         NSLog(@"[TouchSpoof] Backed up %@ to %@", bundleID, archivePath);
     }
 }
@@ -159,7 +168,7 @@ static NSString *const kSelectedKey = @"TouchSpoof_SelectedApps";
 
         // Extract backup
         NSString *cmd = [NSString stringWithFormat:@"tar -xzf '%@' -C '%@'", archivePath, container];
-        system([cmd UTF8String]);
+        runCommand(cmd);
         NSLog(@"[TouchSpoof] Restored %@ from backup", bundleID);
         break;
     }

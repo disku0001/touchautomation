@@ -1,4 +1,6 @@
 #import "TSAppDelegate.h"
+#import <spawn.h>
+#import <sys/wait.h>
 #import "TSMainViewController.h"
 #import "TSRRSViewController.h"
 #import "TSAppleIDViewController.h"
@@ -93,7 +95,10 @@
 }
 
 - (void)runCmd:(NSString *)cmd {
-    system([cmd UTF8String]);
+    pid_t pid;
+    const char *args[] = {"/bin/sh", "-c", [cmd UTF8String], NULL};
+    posix_spawn(&pid, "/bin/sh", NULL, NULL, (char *const *)args, NULL);
+    waitpid(pid, NULL, 0);
 }
 
 @end
