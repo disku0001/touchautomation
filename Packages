@@ -17,40 +17,6 @@ Size: 23849172
 MD5sum: e8b48476ae178b32b88334fecb43cf37
 SHA256: bc852ada00157adc4a724b38b024a7df088ceb46baf594e2579aeb256b2a6fd0
 
-Package: com.shadowtech.ios
-Name: shadowios (rootless)
-Depiction: https://repo.shadowtech.vip/depictions/web/?p=com.shadowtech.ios
-SileoDepiction: https://repo.shadowtech.vip/depictions/native/com.shadowtech.ios/depiction.json
-Depends: preferenceloader, zip (>= 2.2), unzip (>= 6.0), curl, ldid (>= 2.0), sqlite3 (>= 3.24) | firmware (<< 7.0)
-Description: ShadowTech ios autolead
-Maintainer: ShadowTech
-Author: ShadowTech
-Section: System
-Tag: role::hacker
-Architecture: iphoneos-arm64
-Version: 1.0.5
-Installed-Size: 9364
-Filename: pool/rootless/com.shadowtech.ios_1.0.5_iphoneos-arm64.deb
-Size: 2158674
-MD5sum: 87bd745497f605869aa6cb405bc6173d
-SHA256: d5998387656b6987ef893ee3d48ddda755dd165b2fc0f2361b3ba132d3206747
-
-Package: com.touchautomation.touchspoof
-Name: TouchSpoof (rootless)
-Depends: mobilesubstrate (>= 0.9.5000) | libhooker, preferenceloader, firmware (>= 15.0)
-Description: Device spoofing tweak - fake device info, location, ads, network, browser, datetime, sensors, screen, locale, and more. No login required.
-Maintainer: TouchAutomation
-Author: TouchAutomation
-Section: Tweaks
-Tag: role::hacker
-Architecture: iphoneos-arm64
-Version: 1.0.0
-Installed-Size: 512
-Filename: pool/rootless/com.touchautomation.touchspoof_1.0.0_iphoneos-arm64.deb
-Size: 57066
-MD5sum: 82b32d631f061d64797eb266eb37585a
-SHA256: 4988832e5bb903317c2f37e6657f9a60e9e708c404ef40a0858261757e3a51de
-
 Package: me.autotouch.autotouch.ios8.inputtext
 Priority: optional
 Section: Utilities
